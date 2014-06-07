@@ -1,0 +1,27 @@
+---
+# apt/tasks/main.yml
+
+- name: Update apt cache
+  apt: update_cache=yes cache_valid_time=3600
+  sudo: yes
+
+- name: Upgrade the distro
+  apt: upgrade=yes
+  sudo: yes
+
+- name: Install Packages
+  apt: >
+    pkg={{ item }}
+    state=latest
+  sudo: yes
+  with_items:
+    - build-essential
+    - unattended-upgrades
+
+- name: Configure Apt Perodic
+  copy: >
+    src=apt_periodic
+    dest='/etc/apt/apt.conf.d/10periodic'
+    owner=root
+    group=root
+    mode=0644
