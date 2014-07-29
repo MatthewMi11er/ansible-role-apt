@@ -1,5 +1,16 @@
 ---
-# apt/meta/main.yml
+# file: apt/meta/main.yml
 
+galaxy_info:
+  author: Matthew Miller
+  description:
+  company: your company (optional)
+  license: license (MIT)
+  min_ansible_version: 1.6
+  platforms:
+    - name: Ubuntu
+      - trusty
+  categories:
+    - packaging
 dependencies: []
-version: 1.0.0
+  
