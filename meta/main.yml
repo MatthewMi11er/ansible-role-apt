@@ -1,6 +1,6 @@
 ---
 # file: apt/meta/main.yml
-
+version: 1.0.4
 galaxy_info:
   author: Matthew Miller
   description:
